@@ -15,11 +15,11 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 #-------------------------------------------------------------------
 
-from PIPE_2_ERE_SINGLE_DOC.SDERE_function_design import SDERE_prompt_intro
-from PIPE_2_ERE_SINGLE_DOC.SDERE_function_design import maintain_clean_global,maintain_must_and_must_not,maintain_have_answer
-from PIPE_2_ERE_SINGLE_DOC.SDERE_function_design import option_to_relation_name,option_to_specific_name
-from PIPE_2_ERE_SINGLE_DOC.SDERE_function_design import create_specific_question,create_relation_question,after_thinking
-from PIPE_2_ERE_SINGLE_DOC.SDERE_function_design import RELATION_ANSWER_LIST,SPECIFIC_ANSWER_LIST,MUST_NOT,MUST
+from PIPE_2_relation_annotation_intra.function_design import SDERE_prompt_intro
+from PIPE_2_relation_annotation_intra.function_design import maintain_clean_global,maintain_must_and_must_not,maintain_have_answer
+from PIPE_2_relation_annotation_intra.function_design import option_to_relation_name,option_to_specific_name
+from PIPE_2_relation_annotation_intra.function_design import create_specific_question,create_relation_question,after_thinking
+from PIPE_2_relation_annotation_intra.function_design import RELATION_ANSWER_LIST,SPECIFIC_ANSWER_LIST,MUST_NOT,MUST
 import re
 
 

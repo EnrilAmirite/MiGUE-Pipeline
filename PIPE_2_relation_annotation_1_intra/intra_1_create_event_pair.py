@@ -1,4 +1,4 @@
-from SDERE_function_design import create_SDERE_event_pair
+from PIPE_2_relation_annotation_intra.function_design import create_SDERE_event_pair
 import os
 
 
