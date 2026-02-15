@@ -1,0 +1,16 @@
+{
+    "Doc_A_ID":"",
+    "Doc_B_ID":"",
+    "Event_A_ID":"",
+    "Event_B_ID":"",
+    "Event_A_Mention":"",
+    "Event_A_Trigger":"",
+    "Event_B_Mention":"",
+    "Event_B_Trigger":"",
+    "RELATION":{
+        "TEMPORAL":"",
+        "CAUSAL":"",
+        "SUBEVENT":"",
+        "COREFERENCE":""
+    }      
+}

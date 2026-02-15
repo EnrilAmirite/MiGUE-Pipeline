@@ -1,0 +1,112 @@
+{
+    "TEMPORAL":{
+        "TEMP_1": {
+            "name": "BEFORE",
+            "text": "A在B之前(BEFORE),即事件A的结束时间早于事件B的开始时间"
+        },
+        "TEMP_2": {
+            "name": "AFTER",
+            "text": "A在B之后(AFTER),即事件A的开始时间晚于事件B的结束时间"
+        },
+        "TEMP_3": {
+            "name": "SIMULTANEOUS",
+            "text": "A与B同时发生(SIMULTANEOUS),即事件A和事件B的开始时间和结束时间完全一致"
+        },
+        "TEMP_4": {
+            "name": "OVERLAP",
+            "text": "A与B的时间交叠(OVERLAP),即事件A和事件B的发生时间有部分重叠,但并不完全一致,也没有一方的时间完全在另一方的时间之内"
+        },
+        "TEMP_5": {
+            "name": "CONTAINS",
+            "text": "A包含B(CONTAINS),即事件B的发生时间在事件A的发生时间之后,且,事件B的结束时间在事件A的结束时间之前"
+        },
+        "TEMP_6": {
+            "name": "IS_CONTAINED",
+            "text": "A被B包含(IS_CONTAINED),即事件A的发生时间在事件B的发生时间之后,且,事件A的结束时间在事件B的结束时间之前"
+        },
+        "TEMP_7": {
+            "name": "NO_TEMPORAL",
+            "text": "A与B的时间关系无法确定(NO_TEMPORAL),即无法从文本中确定事件A和事件B的时间关系"
+        }
+    },
+
+    "SUBEVENT":{
+        "SUB_1":{
+            "name":"SUBEVENT",
+            "text":"A是B的子事件(SUBEVENT),即事件A是事件B的一部分,事件B包含事件A"
+        },
+        "SUB_2":{
+            "name":"IS_SUBEVENTED",
+            "text":"A的子事件有B(IS_SUBEVENTED),即事件B是事件A的一部分,事件A包含事件B"
+        },
+        "SUB_3":{
+            "name":"NO_SUBEVENT",
+            "text":"A和B没有子事件关系(NO_SUBEVENT),即事件A不是事件B的一部分,事件B也不是事件A的一部分"
+        }
+    },
+
+    "COREFERENCE":{
+        "COR_1":{
+            "name":"COREFERENCE",
+            "text":"A与B共指(COREFERENCE),即事件A和事件B实际上为同个事件的事件提及"
+        },
+        "COR_2":{
+            "name":"NO_COREFERENCE",
+            "text":"A与B没有共指关系(COREFERENCE),即事件A和事件B不是同个事件的事件提及"
+        }
+    },
+
+    "CAUSAL":{
+        "CAU_1":{
+            "name":"CAUSE",
+            "text":"A导致B(CAUSE),事件A的发生,事件B一定会发生"
+        },
+        "CAU_2":{
+            "name":"PRECONDITION",
+            "text":"A是B的前提(PRECONDITION),即如果事件A不发生,则事件B一定不会发生"
+        }, 
+        "CAU_3":{
+            "name":"IS_CAUSED",
+            "text":"A被B导致(IS_CAUSED),即事件B的发生,事件A一定会发生"
+        },
+        "CAU_4":{
+            "name":"IS_PRECONDITION",
+            "text":"A的前提是B(IS_PRECONDITION),即如果事件B不发生,则事件A一定不会发生"
+        },
+        "CAU_5":{
+            "name":"NO_CAUSAL",
+            "text":"A与B无因果关系(NO_CAUSAL),即事件A的发生与事件B的发生之间没有任何因果关系"
+        }
+    },
+
+    "RELATION_CHOOSE":{
+        "REL_A":{
+            "relation":"TEMPORAL",
+            "text":"时间关系(Temporal)"
+        },
+        "REL_B":{
+            "relation":"CAUSAL",
+            "text":"因果关系(Causal)"            
+        },    
+        "REL_C":{
+            "relation":"SUBEVENT",
+            "text":"子事件关系(Subevent)"             
+        },
+        "REL_D":{
+            "relation":"COREFERENCE",
+            "text":"共指关系(Coreference)"             
+        }
+    },
+
+    "ACTION_CHOOSE":{
+        "ACT_A":{
+            "text":"我认为现在的判断没有问题,可以进行下一步了"
+        },
+        "ACT_B":{
+            "text":"我认为现在的判断有问题,我们重新进行当前 Specific Relation 的判断"
+        },
+        "ACT_C":{
+            "text":"我认为现在的判断问题很大,我们需要重新进行所有的事件关系判断"
+        }
+    }
+}
