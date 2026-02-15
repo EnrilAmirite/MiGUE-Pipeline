@@ -1,0 +1,28 @@
+{
+
+    "type_name_1":{
+        "EX_1":{
+            "Event_Mention":"",
+            "Trigger_Words":"",
+            "Explain":""
+        },
+        "EX_2":{
+            "Event_Mention":"",
+            "Trigger_Words":"",
+            "Explain":""
+        }
+    },
+    "type_name_2":{
+        "EX_1":{
+            "Event_Mention":"",
+            "Trigger_Words":"",
+            "Explain":""
+        },
+        "EX_2":{
+            "Event_Mention":"",
+            "Trigger_Words":"",
+            "Explain":""
+        }
+    }
+
+}
