@@ -17,7 +17,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 #-------------------------------------------------------------------
 from CONFIG.config import GLOBAL_CLUSTER_SUFFIX
 suffix=GLOBAL_CLUSTER_SUFFIX
-from CLUSTER_2_sentence import path_output,path_doc_em_index
+from PIPE_4_CLUSTER.CLUSTER_1_sentence import path_output,path_doc_em_index
 
 doc_edge_weight = defaultdict(int)
 #----------------------------------------------------------------------------------------

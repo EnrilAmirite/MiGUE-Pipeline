@@ -1,0 +1,14 @@
+#原始语料(可以自己分批次...这里就不写了)
+corpus:
+  language:
+  path:
+
+api:
+ LLM_api:
+   llm_url: ""
+   llm_key: ""
+ embedding_api:
+  embedding_url: ""
+  embedding_key: ""
+
+#------------------------------------------------------
