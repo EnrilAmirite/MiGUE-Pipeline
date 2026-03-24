@@ -1,0 +1,28 @@
+{
+    "TEMPORAL":{
+        "BEFORE":"AFTER",
+        "AFTER":"BEFORE",
+        "SIMULTANEOUS":"SIMULTANEOUS",
+        "OVERLAP":"OVERLAP",
+        "CONTAINS":"IS_CONTAINED",
+        "IS_CONTAINED":"CONTAINS",
+        "NO_TEMPORAL":"NO_TEMPORAL"
+    },
+    "SUBEVENT":{
+        "SUBEVENT":"IS_SUBEVENTED",
+        "IS_SUBEVENTED":"SUBEVENT",
+        "NO_SUBEVENT":"NO_SUBEVENT"
+    },
+    "COREFERENCE":{
+        "COREFERENCE":"COREFERENCE",
+        "NO_COREFERENCE":"NO_COREFERENCE"
+    },
+    "CAUSAL":{
+        "CAUSE":"IS_CAUSED",
+        "IS_CAUSED":"CAUSE",
+        "PRECONDITION":"IS_PRECONDITION",
+        "IS_PRECONDITION":"PRECONDITION",
+        "NO_CAUSAL": "NO_CAUSAL"
+    }
+
+}

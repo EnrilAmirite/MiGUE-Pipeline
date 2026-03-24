@@ -1,0 +1,41 @@
+#choose language zh/en
+language: zh
+max_workers: 8
+raw_document_path: here_is_a_sample/raw_data/chinese_news.csv
+
+#yes or no
+print_prompt: no
+print_llm_reply: no
+
+#set annotation llms, name should in llm_api.yaml
+document_filtering:
+ llm: 4omini
+
+event_anno:
+ llm: qwen3
+ #direct or reflection
+ type: reflection
+ embedding_llm: small
+
+event_relation_anno_intra:
+ llm: deepseek
+ #direct or reflection
+ type: reflection
+
+
+event_relation_anno_cross:
+ llm: deepseek
+ #direct or reflection
+ type: reflection
+
+
+document_clustering:
+ min_core_num: 2 # the minimum number of core-event pairs required to connect to a doc edge
+ min_cluster_doc: 2 # the minimum number of documents in each cluster
+
+pipeline:
+ - document_filtering
+ - event_anno
+ - event_relation_anno_intra
+ - event_relation_anno_cross
+ - document_clustering

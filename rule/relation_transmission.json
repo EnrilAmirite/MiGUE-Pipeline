@@ -1,0 +1,67 @@
+{
+
+    "TEMPORAL":{
+        "BEFORE":{
+            "BEFORE":"BEFORE",
+            "SIMULTANEOUS":"BEFORE",
+            "CONTAINS":"BEFORE"           
+        },
+        "AFTER":{
+            "AFTER":"AFTER",
+            "SIMULTANEOUS":"AFTER",
+            "CONTAINS":"AFTER"
+        },
+        "SIMULTANEOUS":{
+            "BEFORE":"BEFORE",
+            "SIMULTANEOUS":"SIMULTANEOUS",
+            "OVERLAP":"OVERLAP",
+            "CONTAINS":"CONTAINS",
+            "IS_CONTAINED":"IS_CONTAINED"
+        },
+        "OVERLAP":{
+            "SIMULTANEOUS":"OVERLAP"
+        },
+        "CONTAINS":{
+            "SIMULTANEOUS":"CONTAINS",
+            "CONTAINS":"CONTAINS"
+        },
+        "IS_CONTAINED":{
+            "BEFORE":"BEFORE",
+            "AFTER":"AFTER",
+            "SIMULTANEOUS":"IS_CONTAINED",
+            "IS_CONTAINED":"IS_CONTAINED"
+        }
+    },
+    "SUBEVENT":{
+        "SUBEVENT":{
+            "SUBEVENT":"SUBEVENT"
+        },
+        "IS_SUBEVENTED":{
+            "IS_SUBEVENTED":"IS_SUBEVENTED"
+        }
+    },
+    "COREFERENCE":{
+        "COREFERENCE":{
+            "COREFERENCE":"COREFERENCE"
+        }
+    },
+    "CAUSAL":{
+        "CAUSE":{
+            "CAUSE":"CAUSE",
+            "PRECONDITION": "PRECONDITION"
+        },
+        "IS_CAUSED":{
+            "IS_CAUSED":"IS_CAUSED",
+            "IS_PRECONDITION":"IS_PRECONDITION"
+        },
+        "PRECONDITION":{
+            "PRECONDITION":"PRECONDITION",
+            "CAUSE":"PRECONDITION"
+        },
+        "IS_PRECONDITION":{
+            "IS_PRECONDITION":"IS_PRECONDITION",
+            "IS_CAUSED":"IS_PRECONDITION"
+        }
+    }
+
+}

@@ -1,0 +1,20 @@
+{
+    "system":"You are a professional document auditor. Evaluate the provided document strictly based on the given rules. Output 'P' (Pass) if the criteria are met, or 'F' (Fail) otherwise. Do not provide any additional explanation.",
+
+    "intro":"请根据下面的规则,评估给出文档的质量.\n",
+    "event":{
+        "intro":"请根据下面的规则,从'事件'角度,评估该篇文档的质量\n",
+        "rules":"1.我们规定事件(event)仅仅指那些有参与者,并有明显动作的,并已经明确在现实世界中发生(即:一定对应一个真实的时间点或时间段)的特定事件.\n2.如果一篇文档讲述'事件'的部分占比过少(仅占整篇文档的20%及以下)则判断为质量不合格,返回'F'\n3.反之,我们认为质量合格,返回'P'\n"
+    },
+    "text":{
+        "intro":"请根据下面的规则,从'文本质量'角度,评估该篇文档的质量\n",
+        "rules":"1.如果一篇文档有明显的文本不全、内容缺少,我们认为该篇文档质量不过关,返回'F'\n2.如果一篇文档文本不通顺,有错误标点、多字、错字等低级错误,我们认为该篇文档质量不过关,返回'F'\n3.反之,我们认为质量合格,返回'P'\n"
+    },
+    "factual":{
+        "intro":"请根据下面的规则,从'事实信息'角度,评估该篇文档的质量\n",
+        "rules":"1.如果一篇文档的主题基本是情绪输出,娱乐新闻,引用文学作品,我们认为该篇文档质量不过关,返回'F'\n2.反之,我们认为质量合格,返回'P'\n"
+    },
+    "give_doc":"这是您需要评估质量的文档:\n",
+    "output_control":"请思考后返回您的答案,请只输出'F'(认为该篇文档质量不合格)或'P'(认为该篇文档质量合格),请不要输出其他任何无关的字符或者推理过程。\n"
+
+}

@@ -1,0 +1,66 @@
+llm:
+ #glm dose not need url
+ test: 
+  model_name: "gpt-4o-mini"
+  base_url: "https://api.holdai.top/v1"
+  api_key: "sk-fIykDuUGm55RV6qPBe2eD1238e6f4f47992988D008Ac7eA6"
+  client_module: "openai"
+  temperature: 0
+
+ glm:
+  model_name: "glm-4.7"
+  api_key: "3bfcdef01c8e4ce6a0f94577d6ac8220.T1ui2frFmMICyo2M"
+  client_module: "zhipu"
+  temperature: 0
+
+ deepseek:
+  model_name: "deepseek-reasoner"
+  base_url: "https://api.deepseek.com/v1"
+  api_key: "sk-7b3997483a004b16affb797e8473603c"
+  client_module: "openai"
+  temperature: 0
+
+
+ 4omini: 
+  model_name: "gpt-4o-mini"
+  base_url: "https://api.holdai.top/v1"
+  api_key: "sk-fIykDuUGm55RV6qPBe2eD1238e6f4f47992988D008Ac7eA6"
+  client_module: "openai"
+  temperature: 0
+
+ qwen3: 
+  model_name: "qwen3.5-plus-2026-02-15"
+  base_url: "https://api.holdai.top/v1"
+  api_key: "sk-fIykDuUGm55RV6qPBe2eD1238e6f4f47992988D008Ac7eA6"
+  client_module: "openai"
+  temperature: 0
+
+ print:
+  model_name: ""
+  base_url: ""
+  api_key: ""
+  client_module: "print"
+  temperature: 0.2
+
+#you can add any model you like 
+ any_model_i_like: 
+  model_name: ""
+  base_url: ""
+  api_key: ""
+  client_module: "openai"
+  temperature: 0.2
+
+
+
+embedding_llm:
+ test:
+  model_name: "text-embedding-3-small"
+  base_url: "https://api.holdai.top/v1"
+  api_key: "sk-fIykDuUGm55RV6qPBe2eD1238e6f4f47992988D008Ac7eA6"
+  client_module: "embedding"
+
+ small:
+  model_name: "text-embedding-3-small"
+  base_url: "https://api.holdai.top/v1"
+  api_key: "sk-fIykDuUGm55RV6qPBe2eD1238e6f4f47992988D008Ac7eA6"
+  client_module: "embedding"
