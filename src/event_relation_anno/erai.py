@@ -96,6 +96,7 @@ class erai(load_erai_data):
     def erai_cc(self):
         rows=self.ep_df.to_dict('records')
         tt_task=len(self.ep_df)
+        open(self.era_p,'a',encoding='utf-8').close()
         with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
             futures=[
                 executor.submit(self.erai_one_row,row) for row in rows

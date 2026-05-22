@@ -324,13 +324,13 @@ class ConfigGenerator(load_data):
                         },
                         "imd": {
                             "coreline": {
-                                "folder": f"{self.base_dir}/document_filtering/imd",
+                                "folder": f"{self.base_dir}/doc_clustering/imd",
                                 "name": f"{self.rawname}_coreline.jsonl"
                             }
                         },
                         "output": {
                             "dc": {
-                                "folder": f"{self.base_dir}/document_filtering/output",
+                                "folder": f"{self.base_dir}/doc_clustering/output",
                                 "name": f"{self.rawname}_dc.jsonl"
                             }
                         }
@@ -380,9 +380,9 @@ class ConfigGenerator(load_data):
             yaml.dump(config_data, f, allow_unicode=True, sort_keys=False)
 
     def checkNsave_cfg(self):
-        if not self.checkfile('config/document_clustering.yaml'):
+        if not self.checkfile('imdconfig/document_clustering.yaml'):
             for stts in ["document_filtering","event_anno", "event_relation_anno_intra","event_relation_anno_cross","document_clustering"]:
-                save_path=os.path.join("config",f"{stts}.yaml")
+                save_path=os.path.join("imdconfig",f"{stts}.yaml")
                 self.save_config_as_yaml(stts,save_path)
             print('\nGenerate all config ~ ^w^')
             return 0

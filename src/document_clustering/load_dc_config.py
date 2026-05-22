@@ -7,7 +7,7 @@ from src.base_code.load_data import load_data
 
 class load_dc_config(load_config,load_data):
     def __init__(self):
-        load_config.__init__(self,status_cfg_path='config/document_clustering.yaml', status='document_clustering')
+        load_config.__init__(self,status_cfg_path='imdconfig/document_clustering.yaml', status='document_clustering')
         load_data.__init__(self)
 
         self.cdcore_p=self.get_path('input','cdcore')

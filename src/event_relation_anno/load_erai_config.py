@@ -5,7 +5,7 @@ from src.base_code.load_data import load_data
 
 class load_erai_config(load_config,load_data):
     def __init__(self):
-        load_config.__init__(self,status_cfg_path='config/event_relation_anno_intra.yaml', status='event_relation_anno_intra')
+        load_config.__init__(self,status_cfg_path='imdconfig/event_relation_anno_intra.yaml', status='event_relation_anno_intra')
         load_data.__init__(self)
         self.e_p=self.get_path('input','event')
         self.doc_p=self.get_path('input','doc')

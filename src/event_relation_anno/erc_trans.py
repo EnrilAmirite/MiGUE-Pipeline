@@ -28,7 +28,7 @@ class erc_trans(load_erac_config):
     def filtering_core(self):
         print('\nFiltering cross document co-reference event pairs.....')
         with open(self.era_p,'r',encoding='utf-8') as fin:
-            with open(self.core_p,'a',encoding='utf-8') as fout:
+            with open(self.core_p,'w',encoding='utf-8') as fout:
                 for line in fin:
                     line=line.strip()#防止有空格或者空行
                     if not line:
@@ -64,9 +64,9 @@ class erc_trans(load_erac_config):
     def create_cotrans(self):
         print('\nUse cross-doc co-reference to transmit relation.....')
         index=self.create_erc_uni_index(self.core_p,'e_id_a')
-        print(f"DEBUG: index size is {len(index)}")              
+        #print(f"DEBUG: index size is {len(index)}")              
         with open(self.eri_p,'r',encoding='utf-8') as fin:
-            with open(self.cotrans_p,'a',encoding='utf-8') as fout:
+            with open(self.cotrans_p,'w',encoding='utf-8') as fout:
                 for line in fin:
                     line=line.strip()
                     if not line:
@@ -77,7 +77,7 @@ class erc_trans(load_erac_config):
                     core_list_a=index[event_id_a]
                     core_list_b=index[event_id_b]
                     #A'=<---(A--->B)
-                    print(f"DEBUG:现在正在查找{event_id_a},list为{core_list_a}")
+                    #print(f"DEBUG:现在正在查找{event_id_a},list为{core_list_a}")
                     if len(core_list_a)!=0:
                         for row in core_list_a:
                             save_data={
@@ -97,7 +97,7 @@ class erc_trans(load_erac_config):
                             }
                             fout.write(json.dumps(save_data,ensure_ascii=False)+"\n")
                     #(A--->B)--->=B'
-                    print(f"DEBUG:现在正在查找{event_id_b},list为{core_list_b}")
+                    #print(f"DEBUG:现在正在查找{event_id_b},list为{core_list_b}")
                     if len(core_list_b)!=0:
                         for row in core_list_b:
                             save_data={
@@ -126,15 +126,16 @@ class erc_trans(load_erac_config):
         index_out=self.create_erc_uni_index(self.eri_p,'e_id_a')
         index_in=self.create_erc_uni_index(self.eri_p,'e_id_b')
         with open(self.cotrans_p,'r',encoding='utf-8') as fin:
-            with open(self.reltrans_p,'a',encoding='utf-8') as fout:
+            with open(self.reltrans_p,'w',encoding='utf-8') as fout:
                 for line in fin:
                     line=line.strip()
                     if not line:
                         continue
                     cd_ere=json.loads(line)
+                    transmit=cd_ere["bg"].get("transmit")
                     #?--->A'--->B
                     # re_1   re_2
-                    if cd_ere["bg"]["core_trans_from"]=='head':
+                    if transmit=='head':
                         sd_ere_list=index_in[cd_ere["bg"]["e_id_a"]] 
                         if len(sd_ere_list)!=0 :
                             for row in sd_ere_list:
@@ -167,13 +168,13 @@ class erc_trans(load_erac_config):
                                             "e_id_a":row["bg"]["e_id_a"],
                                             "e_id_b":  cd_ere["bg"]["e_id_b"],
                                             "imd_e_id": row["bg"]["e_id_b"],
-                                            "tranmit":'head'
+                                            "transmit":'head'
                                         }
                                     }
                                     fout.write(json.dumps(save_data,ensure_ascii=False)+"\n")
                     #A--->B'--->?
                     # re_1   re_2
-                    if cd_ere["bg"]["core_trans_from"]=='tail':
+                    if transmit=='tail':
                         sd_ere_list=index_out[cd_ere["bg"]["e_id_b"]] 
                         if len(sd_ere_list)!=0 :
                             for row in sd_ere_list:

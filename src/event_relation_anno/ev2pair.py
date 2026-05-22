@@ -10,14 +10,20 @@ class ev2pair(load_erai_config):
         self.doc_df=pd.read_csv(self.doc_p)
 
     def create_epair(self):
-        file_exists = os.path.exists(self.ep_p) and os.path.getsize(self.ep_p) > 0
-        if file_exists:
-            self.ep_df=pd.read_csv(self.ep_p)
-            return
         columns=["em_a","e_id_a","tri_a","offset_a",
                 "em_b","e_id_b","tri_b","offset_b",
                 "doc_time","doc"]
-        self.write_csv_head(columns,self.ep_p)
+        file_exists = os.path.exists(self.ep_p) and os.path.getsize(self.ep_p) > 0
+        if file_exists:
+            self.ep_df=pd.read_csv(self.ep_p)
+            if len(self.ep_df) > 0:
+                return
+            print(f"{self.ep_p} has no event pairs. Regenerating it...")
+        pd.DataFrame(columns=columns).to_csv(
+            self.ep_p,
+            index=False,
+            encoding='utf-8'
+        )
         self.doc_df=self.doc_df.set_index('doc_id')
         #intra=same doc id
         for group,group_df in self.e_df.groupby('doc_id'):

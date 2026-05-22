@@ -3,7 +3,7 @@ from src.base_code.load_data import load_data
 
 class load_erac_config(load_config,load_data):
     def __init__(self):
-        load_config.__init__(self,status_cfg_path='config/event_relation_anno_cross.yaml', status='event_relation_anno_cross')
+        load_config.__init__(self,status_cfg_path='imdconfig/event_relation_anno_cross.yaml', status='event_relation_anno_cross')
         load_data.__init__(self)
         self.ep_p=self.get_path('imd','ep')
         self.create_file(self.ep_p)

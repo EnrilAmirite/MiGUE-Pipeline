@@ -9,7 +9,7 @@ from src.base_code.load_data import load_data
 
 
 class find_pott_core(load_erac_config):
-    def __init__(self, status_cfg_path='config/event_relation_anno_cross.yaml', status='event_relation_annotation_cross'):
+    def __init__(self, status_cfg_path='imdconfig/event_relation_anno_cross.yaml', status='event_relation_annotation_cross'):
         super().__init__(status_cfg_path, status)
         self.e_df=pd.read_csv(self.e_p)
         with open (self.stc_ebd_p,'rb') as f:

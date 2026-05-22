@@ -5,7 +5,7 @@ from src.base_code.load_data import load_data
 
 class load_eva_config(load_config,load_data):
     def __init__(self):
-        super().__init__(status_cfg_path='config/event_anno.yaml', status='event_anno')
+        super().__init__(status_cfg_path='imdconfig/event_anno.yaml', status='event_anno')
         self.ip_p=self.get_path('input','doc')
         self.ev_p=self.get_path('output','event')
 

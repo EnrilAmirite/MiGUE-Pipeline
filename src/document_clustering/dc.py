@@ -47,7 +47,7 @@ class dc(load_dc_config):
 
 
     def clusterdoc(self):
-        doc_edge_weight = defaultdict(int)
+        self.doc_df["doc_id"] = self.doc_df["doc_id"].astype(str)
         docid2doc=dict(zip(self.doc_df["doc_id"], self.doc_df["doc"]))
         docid2doctime=dict(zip(self.doc_df["doc_id"], self.doc_df["doc_time"]))
         doc_edge_weight = defaultdict(int)
@@ -60,7 +60,7 @@ class dc(load_dc_config):
                 if dociid not in docid2doc:
                     continue
                 for ejid in core_e_list:
-                    docjid,emjid= self.eid2docidNemid[ejid]
+                    docjid,emjid= self.eid2docidNemid(ejid)
                     if docjid not in docid2doc:
                         continue
                     if dociid == docjid:
